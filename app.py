@@ -7,12 +7,12 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here-change-in-production'
 
-# Database initialization
+
 def init_db():
     conn = sqlite3.connect('job_portal.db')
     cursor = conn.cursor()
     
-    # Create users table
+   =
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -24,7 +24,7 @@ def init_db():
         )
     ''')
     
-    # Create demo users if they don't exist
+    
     demo_users = [
         ('jobseeker1', 'password123', 'job_seeker', 'seeker@example.com'),
         ('employer1', 'password123', 'employer', 'employer@example.com')
@@ -43,7 +43,7 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Initialize database on startup
+
 init_db()
 
 @app.route('/')
